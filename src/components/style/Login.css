@@ -1,0 +1,30 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.formulario__contenedor{
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.articulo__formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 65%;
+    height: 80vh;
+}
+.formulario__logo{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.formulario__logo img{
+    width: 35%;
+}
