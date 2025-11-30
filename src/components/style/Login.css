@@ -1,7 +1,9 @@
-*{
-    margin: 0%;
-    padding: 0%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
 }
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
     background: #f7f8fa;
@@ -10,45 +12,50 @@ body {
     align-items: center;
     justify-content: center;
 }
-.formulario__contenedor{
+
+.formulario__contenedor {
     width: 100%;
     max-width: 480px;
     padding: 20px;
 }
-.contenedor__articulo{
+
+.contenedor__articulo {
     background: white;
     border-radius: 24px;
     padding: 48px 40px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
-.formulario__logo{
+
+.formulario__logo {
     margin-bottom: 40px;
     display: flex;
     width: 100%;
     justify-content: center;
 }
-.formulario__logo img{
+
+.formulario__logo img {
     width: 55%;
 }
-.titulo{
+
+.titulo {
     font-size: 28px;
     font-weight: 600;
     color: #1a202c;
     text-align: center;
     margin-bottom: 12px;
 }
-.subtitulo{
+
+.subtitulo {
     font-size: 16px;
     color: #718096;
     text-align: center;
     margin-bottom: 32px;
 }
-.input__email{
+
+.input__grupo{
     margin-bottom: 20px;
 }
-.input__contraseña{
-    margin-bottom: 20px;
-}
+
 .label{
     display: block;
     font-size: 14px;
@@ -56,6 +63,7 @@ body {
     color: #4a5568;
     margin-bottom: 8px;
 }
+
 .input-wrapper {
     position: relative;
     display: flex;
@@ -68,7 +76,26 @@ body {
     color: #a0aec0;
     width: 20px;
     height: 20px;
+    pointer-events: none; /* que el icono no bloquee el input */
 }
+
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a0aec0;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+    z-index: 2;
+}
+
+
 .input {
     width: 100%;
     padding: 14px 16px 14px 48px;
@@ -88,22 +115,11 @@ body {
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
-.toggle-password {
-    position: absolute;
-    right: 16px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #a0aec0;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    transition: color 0.2s;
-    }
 
 .toggle-password:hover {
     color: #667eea;
 }
+
 .remember-forgot {
     display: flex;
     justify-content: space-between;
@@ -124,6 +140,7 @@ body {
     cursor: pointer;
     accent-color: #667eea;
 }
+
 .checkbox-label {
     font-size: 14px;
     color: #4a5568;
@@ -141,8 +158,9 @@ body {
 .forgot-link:hover {
     color: #5568d3;
 }
-.iniciar__sesion{
-    width: 93%;
+
+.iniciar__sesion {
+    width: 100%;
     padding: 14px;
     font-size: 16px;
     font-weight: 600;
@@ -154,13 +172,16 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
     margin-bottom: 24px;
 }
-.iniciar__sesion:hover{
+
+.iniciar__sesion:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
 }
+
 .iniciar__sesion:active {
     transform: translateY(0);
 }
+
 .divider {
     display: flex;
     align-items: center;
@@ -176,27 +197,30 @@ body {
     content: "";
     flex: 1;
     height: 1px;
-    background-color: #e2e8f0; /* gris suave */
+    background-color: #e2e8f0;
     margin: 0 12px;
 }
-.formulario__registro{
+
+.formulario__registro {
     text-align: center;
     font-size: 15px;
     color: #4a5568;
 }
-.registro__link{
+
+.registro__link {
     color: #667eea;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s;
 }
-.registro__link:hover{
+
+.registro__link:hover {
     color: #5568d3;
 }
-.footer{
+
+.footer {
     text-align: center;
     font-size: 13px;
     color: #718096;
     margin-top: 20px;
-
 }

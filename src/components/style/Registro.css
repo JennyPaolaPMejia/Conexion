@@ -1,49 +1,60 @@
-*{
-    margin:0%;
-    padding: 0%;
-    box-sizing: content-box;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
 }
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     background: #f7f8fa;
     min-height: 100vh;
 }
-.registro__contenedor{
+
+.registro__contenedor {
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
 }
-.registro__card{
+
+.registro__card {
     background: white;
     border-radius: 24px;
     padding: 48px 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
-.titulo{
+
+.titulo {
     font-size: 32px;
     font-weight: 600;
     color: #1a202c;
     text-align: center;
     margin-bottom: 12px;
 }
-.subtitulo{
+
+.subtitulo {
     font-size: 16px;
     color: #718096;
     text-align: center;
     margin-bottom: 32px;
 }
-.registro__subtitulo{
+
+.registro__subtitulo {
     font-size: 16px;
     font-weight: 500;
     color: #2d3748;
     margin-bottom: 16px;
 }
-.tipo_de_cuenta{
+
+.tipo_de_cuenta {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-bottom: 32px;
 }
+
 .account-type-card {
     border: 2px solid #e2e8f0;
     border-radius: 16px;
@@ -53,29 +64,18 @@ body {
     transition: all 0.3s;
     background: white;
 }
+
 .account-type-card:hover {
     border-color: #cbd5e0;
     transform: translateY(-2px);
 }
+
 .account-type-card.active {
     border-color: #667eea;
     background: #f7f9ff;
 }
-.account-type-card.active .candidato__logo {
-    background: #e6e9ff;
-    color: #667eea;
-}
-.cuenta__titulo{
-    font-size: 18px;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 4px;
-}
-.cuenta_subtitulo{
-    font-size: 14px;
-    color: #718096;
-}
-.cuenta_logo{
+
+.cuenta__logo {
     width: 48px;
     height: 48px;
     margin: 0 auto 16px;
@@ -87,10 +87,141 @@ body {
     color: #4a5568;
 }
 
+.cuenta__titulo {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 4px;
+}
 
-.registrar__cuenta{
-    width: 91%;
-    padding: 14px;
+.cuenta__subtitulo {
+    font-size: 14px;
+    color: #718096;
+}
+
+.formulario__registro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 23px;
+    margin-bottom: 24px;
+}
+
+.formulario__registro2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* LABELS */
+.label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+.requerido {
+    color: #e53e3e;
+}
+
+/* INPUT WRAPPER */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* INPUTS Y SELECTS */
+.input,
+.select {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.2s;
+    color: #2d3748;
+    background: white;
+}
+
+/* PLACEHOLDER */
+.input::placeholder {
+    color: #a0aec0;
+}
+
+/* FOCUS */
+.input:focus,
+.select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* SELECT PERSONALIZADO */
+.select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a0aec0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 20px;
+    padding-right: 48px;
+}
+
+/* ICONOS INPUT */
+.input-icon {
+    position: absolute;
+    left: 16px;
+    width: 20px;
+    height: 20px;
+    color: #a0aec0;
+}
+
+/* MOSTRAR / OCULTAR CONTRASEÑA */
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a0aec0;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.toggle-password:hover {
+    color: #667eea;
+}
+
+/* TERMS */
+.terms-box {
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+/* BOTÓN */
+.registrar__cuenta {
+    width: 100%;
+    padding: 16px;
     font-size: 16px;
     font-weight: 600;
     color: white;
@@ -98,13 +229,57 @@ body {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-bottom: 20px;
-    margin-top:25px;
+    transition: all 0.3s;
 }
 
+.registrar__cuenta:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
 
+.registrar__cuenta:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
+@media (max-width: 768px) {
+    .formulario__registro2 {
+        grid-template-columns: 1fr;
+    }
 
+    .registro__card {
+        padding: 32px 24px;
+    }
+}
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0aec0;
+    font-size: 14px;
+    margin: 24px 0;
+    width: 100%;
+}
 
-
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #e2e8f0; 
+    margin: 0 12px;
+}
+.formulario__login{
+    text-align: center;
+    font-size: 15px;
+    color: #4a5568;
+}
+.login{
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.login:hover{
+    color: #5568d3;
+}
