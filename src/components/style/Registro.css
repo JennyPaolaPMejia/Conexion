@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -13,6 +12,7 @@ body {
     min-height: 100vh;
 }
 
+
 .registro__contenedor {
     max-width: 800px;
     margin: 40px auto;
@@ -25,6 +25,7 @@ body {
     padding: 48px 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+
 
 .titulo {
     font-size: 32px;
@@ -99,6 +100,7 @@ body {
     color: #718096;
 }
 
+
 .formulario__registro {
     display: grid;
     grid-template-columns: 1fr;
@@ -113,30 +115,35 @@ body {
     margin-bottom: 20px;
 }
 
-/* LABELS */
+.formulario__grupo {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+
+
 .label {
     font-size: 14px;
     font-weight: 500;
     color: #4a5568;
     margin-bottom: 8px;
+    text-align: left; 
 }
 
 .requerido {
     color: #e53e3e;
 }
 
-/* INPUT WRAPPER */
 .input-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-/* INPUTS Y SELECTS */
 .input,
 .select {
     width: 100%;
-    padding: 14px 16px;
+    padding: 14px 16px 14px 48px;   
     font-size: 15px;
     border: 2px solid #e2e8f0;
     border-radius: 12px;
@@ -146,19 +153,31 @@ body {
     background: white;
 }
 
-/* PLACEHOLDER */
+.select {
+    padding-left: 48px !important; 
+}
+
 .input::placeholder {
     color: #a0aec0;
 }
 
-/* FOCUS */
 .input:focus,
 .select:focus {
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
-/* SELECT PERSONALIZADO */
+.input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #a0aec0;
+    pointer-events: none;
+}
+
 .select {
     cursor: pointer;
     appearance: none;
@@ -169,19 +188,11 @@ body {
     padding-right: 48px;
 }
 
-/* ICONOS INPUT */
-.input-icon {
-    position: absolute;
-    left: 16px;
-    width: 20px;
-    height: 20px;
-    color: #a0aec0;
-}
-
-/* MOSTRAR / OCULTAR CONTRASEÑA */
 .toggle-password {
     position: absolute;
     right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
@@ -189,14 +200,12 @@ body {
     padding: 4px;
     display: flex;
     align-items: center;
-    transition: color 0.2s;
 }
 
 .toggle-password:hover {
     color: #667eea;
 }
 
-/* TERMS */
 .terms-box {
     background: #f7fafc;
     border: 2px solid #e2e8f0;
@@ -214,12 +223,10 @@ body {
 .checkbox {
     width: 20px;
     height: 20px;
-    cursor: pointer;
     accent-color: #667eea;
 }
 
-/* BOTÓN */
-.registrar__cuenta {
+.submit-btn {
     width: 100%;
     padding: 16px;
     font-size: 16px;
@@ -232,14 +239,48 @@ body {
     transition: all 0.3s;
 }
 
-.registrar__cuenta:hover:not(:disabled) {
+.submit-btn:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
 }
 
-.registrar__cuenta:disabled {
+.submit-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0aec0;
+    font-size: 14px;
+    margin: 24px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 0 12px;
+}
+
+.formulario__login {
+    text-align: center;
+    font-size: 15px;
+    color: #4a5568;
+}
+
+.login {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login:hover {
+    color: #5568d3;
 }
 
 @media (max-width: 768px) {
@@ -250,36 +291,4 @@ body {
     .registro__card {
         padding: 32px 24px;
     }
-}
-.divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #a0aec0;
-    font-size: 14px;
-    margin: 24px 0;
-    width: 100%;
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background-color: #e2e8f0; 
-    margin: 0 12px;
-}
-.formulario__login{
-    text-align: center;
-    font-size: 15px;
-    color: #4a5568;
-}
-.login{
-    color: #667eea;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s;
-}
-.login:hover{
-    color: #5568d3;
 }
