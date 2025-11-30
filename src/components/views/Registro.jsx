@@ -88,24 +88,53 @@ function Register() {
                                 <div className="cuenta__subtitulo">Busco talento</div>
                             </div>
                         </div>
+                        <div className="formulario_registro">
 
-                        <input
-                            type="email"
-                            placeholder="Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
+                            {/* Email */}
+                            <div className="input__email">
+                                <label htmlFor="email" className="label">Email:</label>
+                                <div className="input-wrapper">
 
-                        <input
-                            type="password"
-                            placeholder="Contraseña"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
+                                <svg className="input-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
 
-                        <button type="submit" disabled={loading}>
+                                <input
+                                    className="input"
+                                    type="email"
+                                    placeholder="Email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+
+                                </div>
+                            </div>
+
+                            {/* Contraseña */}
+                            <div className="input__contraseña" >
+                                <label htmlFor="password" className="label">Contraseña:</label>
+                                <div className="input-wrapper">
+                                    <svg className="input-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                    </svg>
+                                    <input
+                                    className="input"
+                                    type="password"
+                                    placeholder="Contraseña"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    />
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div >
+                            <button className="registrar__cuenta" type="submit" disabled={loading} >
                             {loading ? "Cargando..." : "Crear cuenta"}
-                        </button>
+                            </button>
+                        </div>
                     </form>
                 </article>
             </main>
