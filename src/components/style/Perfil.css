@@ -1,0 +1,179 @@
+* {
+    /* Reset: Reseteamos márgenes y padding */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    list-style-type: none;
+}
+
+/* Variables de Color y Diseño (simples y directas) */
+:root {
+    --color-principal: #007bff;        /* Azul para acentos y enlaces */
+    --color-fondo-pagina: #f8f9fa;     /* Fondo gris muy claro */
+    --color-sombra: 0 4px 12px rgba(0, 0, 0, 0.06); /* Sombra elegante */
+    --borde-radio-suave: 10px;        /* Redondeado de esquinas */
+    --espacio-cajas: 20px;            /* Espacio estándar entre elementos */
+    --color-texto-base: #333;
+    --color-texto-secundario: #6c757d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo-pagina);
+    color: var(--color-texto-base);
+    padding: 30px;
+}
+
+
+/* 1. LAYOUT PRINCIPAL (ESTRUCTURA DE COLUMNA ÚNICA) */
+
+
+.perfil-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* Configuración clave: UNA SOLA COLUMNA DE ANCHO COMPLETO */
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna que ocupa todo el ancho */
+    gap: var(--espacio-cajas);
+}
+
+/* Estilo de Tarjeta (aplicado a todas las secciones) */
+section, 
+.resumen-experiencia, 
+.habilidades-diseño, 
+.certificaciones-reseñas, 
+.portafolio {
+    background: white;
+    border-radius: var(--borde-radio-suave);
+    box-shadow: var(--color-sombra);
+    padding: 25px;
+    height: fit-content;
+    margin-bottom: 0; /* Lo gestionamos con el gap del contenedor principal */
+}
+
+/* La información principal y educación ahora ocupan 100% del ancho */
+.info-principal {
+    grid-column: 1 / 2; /* Ocupa la única columna */
+    text-align: center;
+}
+
+.bloque-educacion {
+    grid-column: 1 / 2; /* Ocupa la única columna */
+}
+
+
+
+/* 2. LAYOUT DE COLUMNAS INTERNAS (ALTURA IGUAL Y DOBLE) */
+
+
+/* Contenedores de 2 tarjetas que ahora van debajo en una nueva fila */
+.resumen-experiencia,
+.habilidades-diseño,
+.certificaciones-reseñas {
+    grid-column: 1 / 2; /* Ocupan todo el ancho (100%) */
+    
+    /* Configuración para mantener el diseño de 2 tarjetas una al lado de la otra (50/50) */
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: var(--espacio-cajas);
+    
+    /* Quitamos el estilo de tarjeta del contenedor padre */
+    padding: 0;
+    box-shadow: none;
+    background: none;
+    margin-bottom: 0;
+}
+
+/* Portafolio (1 columna, 100% de ancho) */
+.portafolio {
+    grid-column: 1 / 2;
+    grid-template-columns: 1fr;
+}
+
+/* Aplicamos estilo de tarjeta y alineación a los hijos  */
+.bloque-resumen, .bloque-areas, .bloque-habilidades, .bloque-diseño, .certificaciones, .reseñas {
+    padding: 25px;
+    box-shadow: var(--color-sombra);
+    background-color: white;
+    height: 100%; /* El truco: Hacemos que la tarjeta se estire para llenar el espacio */
+    margin-bottom: 0; 
+}
+
+
+/* 3. DETALLES Y ACENTOS  */
+
+.bloque-educacion ul,
+.bloque-areas ul,
+.bloque-diseño ul {
+    /* Esta línea borra las viñetas circulares o cuadradas */
+    list-style: none; 
+    
+    /* Esta línea es clave para que el texto NO se mueva a la derecha (quita la indentación) */
+    padding-left: 0; 
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilo de la Foto y Botones */
+.info-principal .foto-perfil {
+    border: 3px solid var(--color-principal); 
+}
+.btn-editar, .btn-contactar {
+    padding:10px;
+    margin:5px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.btn-editar {
+    background: white;
+    color: var(--color-principal);
+    border: 1px solid var(--color-principal);
+}
+.btn-contactar {
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+}
+
+/* Estilo para todas las etiquetas (pastillas) */
+.tags span, .tags-proyecto span, .tags-certificado span {
+    background-color: #f1f7fe;
+    color: var(--color-principal);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    margin: 5px 5px 5px 0;
+    display: inline-block;
+}
+
+
+/* 4. ADAPTABILIDAD (Responsive) */
+
+
+@media (max-width: 992px) {
+    /* Mantenemos 2 columnas internas en tablets */
+    .resumen-experiencia,
+    .habilidades-diseño,
+    .certificaciones-reseñas {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+@media (max-width: 650px) {
+    /* En móviles, todos los diseños de 2 columnas internas se rompen a 1 columna */
+    .resumen-experiencia,
+    .habilidades-diseño,
+    .certificaciones-reseñas {
+        grid-template-columns: 1fr;
+    }
+    .proyecto-item {
+        flex-direction: column;
+    }
+}
